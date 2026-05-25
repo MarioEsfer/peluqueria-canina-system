@@ -52,7 +52,8 @@ Sistema CRUD para gestión de mascotas desarrollado en Java Swing utilizando JPA
 
 Puedes ver el funcionamiento completo aquí:  
 
-[Ver video en GitHub](./CRUD_Peluqueria.mp4)
+[Descargar video desde GitHub](https://github.com/MarioEsfer/Peluqueria-Canina-Lady-s/raw/main/CRUD_Peluqueria.mp4)
+
 
 
 
