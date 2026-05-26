@@ -52,9 +52,9 @@ Sistema CRUD para gestión de mascotas desarrollado en Java Swing utilizando JPA
 
 Puedes ver el funcionamiento completo aquí:  
 
-<p align="center">
-  <img src="Animation.gif" alt="Demostración del Sistema" width="70%" style="max-width: 100%;">
-</p>
+<div align="center" style="background-color: #0d1117; padding: 10px; border-radius: 6px;">
+  <img src="Animation.gif" alt="Demostración del Sistema" width="100%" style="display: block; margin: 0 auto;">
+</div>
 
 
 
