@@ -52,7 +52,7 @@ Sistema CRUD para gestión de mascotas desarrollado en Java Swing utilizando JPA
 
 Puedes ver el funcionamiento completo aquí:  
 
-![Demo Peluquería Canina](Animation.gif)
+![Demostración del Sistema](Animation.gif)
 
 
 
