@@ -53,7 +53,7 @@ El sistema implementa un CRUD completo con login, menú principal y operaciones 
 
 \## 🎬 Demostración en GIF
 
-!\[Demo](assets/Animation.gif)
+![Demo](assets/Animation.gif)
 
 
 \---
