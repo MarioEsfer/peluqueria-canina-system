@@ -18,31 +18,31 @@ El sistema implementa un CRUD completo con login, menú principal y operaciones 
 
 \### 🔑 Login
 
-!\[Login](assets/loginpng.png)
+![Login](assets/loginpng.png)
 
 
 
 \### 🏠 Pantalla Principal
 
-!\[Principal](assets/menu.png)
+![Principal](assets/menu.png)
 
 
 
 \### ➕ Crear (Create)
 
-!\[Crear](assets/crear.png)
+![Crear](assets/crear.png)
 
 
 
 \### 📖 Leer (Read)
 
-!\[Read](assets/verDatos.png)
+![Read](assets/verDatos.png)
 
 
 
 \### ✏️ Actualizar (Update)
 
-!\[Update](assets/modificarMascota.jpeg)
+![Update](assets/modificarMascota.jpeg)
 
 
 
@@ -50,10 +50,10 @@ El sistema implementa un CRUD completo con login, menú principal y operaciones 
 
 
 
+
 \## 🎬 Demostración en GIF
 
 !\[Demo](assets/Animation.gif)
-
 
 
 \---
