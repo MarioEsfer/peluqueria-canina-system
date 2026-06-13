@@ -50,9 +50,9 @@ El sistema implementa un CRUD completo con login, menú principal y operaciones 
 
 
 
-\## 🎬 Demostración en Video
+\## 🎬 Demostración en GIF
 
-\[Ver video del proyecto](assets/proyecto\_peluqueria\_canina1.mp4)
+!\[Demo](assets/Animation.gif)
 
 
 
