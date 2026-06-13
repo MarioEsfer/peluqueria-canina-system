@@ -1,5 +1,9 @@
 \# 🐶 Proyecto Peluquería Canina Lady’s
 
+![Java](https://img.shields.io/badge/Java-21-orange?logo=java)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?logo=mysql)
+![NetBeans](https://img.shields.io/badge/IDE-NetBeans-lightblue?logo=apache-netbeans)
+![Maven](https://img.shields.io/badge/Build-Maven-red?logo=apache-maven)
 
 
 Aplicación de escritorio desarrollada en \*\*Java Swing + JPA + MySQL\*\* para la gestión de clientes y mascotas en una peluquería canina.  
