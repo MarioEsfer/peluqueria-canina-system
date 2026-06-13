@@ -69,9 +69,8 @@ public class ControlLogica {
         controlPersis.modificarDuenio(duenio);
     }
 
-    
-
-    
-
-    
+    public Usuario validarLogin(String usuario, String contrasenia) {
+     
+        return controlPersis.validarLogin(usuario, contrasenia);
+    }
 }

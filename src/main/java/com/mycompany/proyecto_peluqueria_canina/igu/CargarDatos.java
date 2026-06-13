@@ -8,11 +8,12 @@ public class CargarDatos extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CargarDatos.class.getName());
 
-    ControlLogica controlLog;
-
-    public CargarDatos() {
-        controlLog = new ControlLogica();
+    ControlLogica controlLog = null;
+    private String usuario;
+    public CargarDatos(String usuario) {
         initComponents();
+        controlLog = new ControlLogica();
+        this.usuario = usuario;
     }
 
    
@@ -42,9 +43,9 @@ public class CargarDatos extends javax.swing.JFrame {
         cmbAtEspecial = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        btnLimpiar1 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -176,16 +177,20 @@ public class CargarDatos extends javax.swing.JFrame {
         btnGuardar.addActionListener(this::btnGuardarActionPerformed);
         jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 590, 150, 50));
 
-        btnLimpiar.setIcon(new javax.swing.ImageIcon("D:\\Personal\\limpiar (1).png")); // NOI18N
-        btnLimpiar.setText("LIMPIAR");
-        btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 590, 150, 50));
-
-        jLabel11.setText("jLabel11");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 610, -1, -1));
-
         jLabel12.setText("jLabel12");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 610, -1, -1));
+
+        btnLimpiar1.setIcon(new javax.swing.ImageIcon("D:\\Personal\\limpiar (1).png")); // NOI18N
+        btnLimpiar1.setText("LIMPIAR");
+        btnLimpiar1.addActionListener(this::btnLimpiar1ActionPerformed);
+        jPanel1.add(btnLimpiar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 590, 150, 50));
+
+        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        btnRegresar.setIcon(new javax.swing.ImageIcon("C:\\Users\\mario\\Downloads\\regresar (1).png")); // NOI18N
+        btnRegresar.setText("REGRESAR");
+        btnRegresar.setFocusPainted(false);
+        btnRegresar.addActionListener(this::btnRegresarActionPerformed);
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 140, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,27 +215,27 @@ public class CargarDatos extends javax.swing.JFrame {
         String nombreMasc = txtNombre.getText();
         String raza = txtRaza.getText();
         String color = txtColor.getText();
-        boolean alergico = cmbAlergico.getSelectedItem().toString().equals("SI");
-        boolean especial = cmbAtEspecial.getSelectedItem().toString().equals("SI");
+        String valorAlergico = cmbAlergico.getSelectedItem().toString();
+        String valorEspecial = cmbAtEspecial.getSelectedItem().toString();
+        boolean alergico = "SI".equals(valorAlergico);
+        boolean especial = "SI".equals(valorEspecial);
         String nomDuenio = txtNomDuenio.getText();
         String celular = txtCelDuenio.getText();
-        String obervaciones = txtObservacion.getText();
+        String observaciones = txtObservacion.getText();
         
         controlLog.crearMascota(nombreMasc, raza, color, alergico, 
-                                  especial, nomDuenio, celular, obervaciones);
+                                  especial, nomDuenio, celular, observaciones);
         
         JOptionPane optionPane = new JOptionPane("¡Datos guardados exitosamente!");
         optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
         JDialog dialog = optionPane.createDialog("Guardado exitoso");
         dialog.setAlwaysOnTop(true);
-        dialog.setVisible(true);
-        
-       
+        dialog.setVisible(true);       
         
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-
+    private void btnLimpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiar1ActionPerformed
+        
         txtNombre.setText("");
         txtRaza.setText("");
         txtColor.setText("");
@@ -239,17 +244,25 @@ public class CargarDatos extends javax.swing.JFrame {
         txtNomDuenio.setText("");
         txtCelDuenio.setText("");
         txtObservacion.setText("");
-    }//GEN-LAST:event_btnLimpiarActionPerformed
+    }//GEN-LAST:event_btnLimpiar1ActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        Principal pri = new Principal(usuario);
+        pri.setVisible(true);
+        pri.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnLimpiar1;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cmbAlergico;
     private javax.swing.JComboBox<String> cmbAtEspecial;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

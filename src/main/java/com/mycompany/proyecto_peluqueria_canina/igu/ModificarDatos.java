@@ -219,9 +219,10 @@ public class ModificarDatos extends javax.swing.JFrame {
         String color = txtColor.getText();
         boolean alergico = cmbAlergico.getSelectedItem().toString().equals("SI");
         boolean especial = cmbAtEspecial.getSelectedItem().toString().equals("SI");
+        String obervaciones = txtObservacion.getText();
+
         String nomDuenio = txtNomDuenio.getText();
         String celular = txtCelDuenio.getText();
-        String obervaciones = txtObservacion.getText();
         
         controlLog.modificarMascota(masco, nombreMasc, raza, color, alergico, 
                                   especial, nomDuenio, celular, obervaciones);

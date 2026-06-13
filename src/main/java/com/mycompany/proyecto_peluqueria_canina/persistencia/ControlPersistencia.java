@@ -2,6 +2,7 @@ package com.mycompany.proyecto_peluqueria_canina.persistencia;
 
 import com.mycompany.proyecto_peluqueria_canina.logica.Duenio;
 import com.mycompany.proyecto_peluqueria_canina.logica.Mascota;
+import com.mycompany.proyecto_peluqueria_canina.logica.Usuario;
 import com.mycompany.proyecto_peluqueria_canina.persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
 import java.util.logging.Level;
@@ -11,6 +12,7 @@ public class ControlPersistencia {
 
     DuenioJpaController duenioJPA = new DuenioJpaController();
     MascotaJpaController mascotaJPA = new MascotaJpaController();
+    UsuarioJpaController usuJPA = new UsuarioJpaController();
 
     public void crearMascota(Mascota masco, Duenio due) {
         duenioJPA.crear(due);
@@ -44,6 +46,10 @@ public class ControlPersistencia {
 
     public void modificarDuenio(Duenio duenio) {
         duenioJPA.editar(duenio);
+    }
+
+    public Usuario validarLogin(String usuario, String contrasenia) {
+        return usuJPA.validarLogin(usuario, contrasenia);
     }
 
 
