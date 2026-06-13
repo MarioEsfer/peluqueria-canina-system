@@ -3,6 +3,7 @@ package com.mycompany.proyecto_peluqueria_canina.igu;
 import com.mycompany.proyecto_peluqueria_canina.logica.ControlLogica;
 import com.mycompany.proyecto_peluqueria_canina.logica.Mascota;
 import java.util.List;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -12,10 +13,14 @@ public class VerDatos extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VerDatos.class.getName());
     
     ControlLogica controlLog = null;
-    
-    public VerDatos() {
-        controlLog = new ControlLogica();
+    private String usuario;
+    public VerDatos(String usuario) {
         initComponents();
+        controlLog = new ControlLogica();
+        this.usuario=usuario;
+        configurarBotonIcono(btnRegresar);
+        configurarBotonIcono(btnEditar);
+        configurarBotonIcono(btnEliminar);
     }
 
     
@@ -31,6 +36,7 @@ public class VerDatos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -99,23 +105,30 @@ public class VerDatos extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
+        btnRegresar.setIcon(new javax.swing.ImageIcon("C:\\Users\\mario\\Downloads\\regresar (1).png")); // NOI18N
+        btnRegresar.addActionListener(this::btnRegresarActionPerformed);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(182, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
+                .addComponent(btnRegresar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(150, 150, 150))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 1, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegresar))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -178,7 +191,7 @@ public class VerDatos extends javax.swing.JFrame {
                 int num_cliente = Integer.parseInt(String.valueOf(tblListaMascotas.getValueAt(
                         tblListaMascotas.getSelectedRow(), 0)));
                 
-               ModificarDatos pantallaModificar = new ModificarDatos(num_cliente);
+               ModificarDatos pantallaModificar = new ModificarDatos(num_cliente, usuario);
                pantallaModificar.setVisible(true);
                pantallaModificar.setLocationRelativeTo(null);
                this.dispose();
@@ -197,10 +210,19 @@ public class VerDatos extends javax.swing.JFrame {
         cargarTabla();
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        Principal pri = new Principal(usuario);
+        pri.setVisible(true);
+        pri.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -240,6 +262,13 @@ public class VerDatos extends javax.swing.JFrame {
         tblListaMascotas.setModel(modelotabla);
         
         
+    }
+
+    private void configurarBotonIcono(JButton boton) {
+        boton.setBorderPainted(false);
+        boton.setContentAreaFilled(false);
+        boton.setFocusPainted(false);
+        boton.setOpaque(false);
     }
 
     

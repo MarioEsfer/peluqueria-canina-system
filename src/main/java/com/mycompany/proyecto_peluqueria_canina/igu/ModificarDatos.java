@@ -13,13 +13,15 @@ public class ModificarDatos extends javax.swing.JFrame {
     
     int num_cliente;
     Mascota masco;
+    private String usuario;
 
-    public ModificarDatos(int num_cliente) {
-        controlLog = new ControlLogica();
-        this.num_cliente = num_cliente;
+    public ModificarDatos(int num_cliente, String usuario) {
         //Crea toda la interfaz grafica
         initComponents();
-        cargarDatos(num_cliente);       
+        controlLog = new ControlLogica();
+        this.num_cliente = num_cliente;
+        cargarDatos(num_cliente); 
+        this.usuario=usuario;
     }
 
    
@@ -233,7 +235,7 @@ public class ModificarDatos extends javax.swing.JFrame {
         dialog.setAlwaysOnTop(true);
         dialog.setVisible(true);
         
-        VerDatos verdat = new VerDatos();
+        VerDatos verdat = new VerDatos(usuario);
         verdat.setVisible(true);
         verdat.setLocationRelativeTo(null);
         this.dispose();

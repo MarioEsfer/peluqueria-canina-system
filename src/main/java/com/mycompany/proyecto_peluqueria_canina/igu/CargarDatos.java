@@ -14,6 +14,10 @@ public class CargarDatos extends javax.swing.JFrame {
         initComponents();
         controlLog = new ControlLogica();
         this.usuario = usuario;
+        btnRegresar.setBorderPainted(false);
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setFocusPainted(false);
+        btnRegresar.setOpaque(false);
     }
 
    
@@ -187,10 +191,9 @@ public class CargarDatos extends javax.swing.JFrame {
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         btnRegresar.setIcon(new javax.swing.ImageIcon("C:\\Users\\mario\\Downloads\\regresar (1).png")); // NOI18N
-        btnRegresar.setText("REGRESAR");
         btnRegresar.setFocusPainted(false);
         btnRegresar.addActionListener(this::btnRegresarActionPerformed);
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 140, 50));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 50, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

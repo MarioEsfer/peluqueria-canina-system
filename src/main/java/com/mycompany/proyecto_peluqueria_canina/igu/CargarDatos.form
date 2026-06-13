@@ -333,7 +333,6 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="C:\Users\mario\Downloads\regresar (1).png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="REGRESAR"/>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -341,7 +340,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="30" y="30" width="140" height="50"/>
+              <AbsoluteConstraints x="30" y="30" width="50" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
