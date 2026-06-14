@@ -19,6 +19,9 @@ El sistema implementa un CRUD completo con login, menú principal y operaciones 
 ### 🔑 Login
 ![Login](assets/loginpng.png)
 
+### ❌ Usuario Incorrecto
+![Usuario Incorrecto](assets/usuarioIncorrecto.png)
+
 ### 🏠 Pantalla Principal
 ![Principal](assets/menu.png)
 
